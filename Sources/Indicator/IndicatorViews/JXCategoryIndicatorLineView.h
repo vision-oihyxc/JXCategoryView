@@ -8,6 +8,12 @@
 
 #import "JXCategoryIndicatorComponentView.h"
 
+@protocol JXCategoryIndicatorLineViewDelegate <NSObject>
+
+- (void)updateHeight;
+
+@end
+
 typedef NS_ENUM(NSUInteger, JXCategoryIndicatorLineStyle) {
     JXCategoryIndicatorLineStyle_Normal         = 0,
     JXCategoryIndicatorLineStyle_Lengthen       = 1,
@@ -24,5 +30,8 @@ typedef NS_ENUM(NSUInteger, JXCategoryIndicatorLineStyle) {
  lineStyle 为 JXCategoryIndicatorLineStyle_LengthenOffset 有用。
  */
 @property (nonatomic, assign) CGFloat lineScrollOffsetX;
+
+
+@property (nonatomic, weak) id<JXCategoryIndicatorLineViewDelegate> delegate;
 
 @end

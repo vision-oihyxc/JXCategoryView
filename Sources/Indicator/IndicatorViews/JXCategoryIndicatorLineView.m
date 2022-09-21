@@ -54,6 +54,7 @@
         y = self.verticalMargin;
     }
     self.frame = CGRectMake(x, y, selectedLineWidth, [self indicatorHeightValue:model.selectedCellFrame]);
+    [self.delegate updateHeight];
 }
 
 - (void)jx_contentScrollViewDidScroll:(JXCategoryIndicatorParamsModel *)model {
